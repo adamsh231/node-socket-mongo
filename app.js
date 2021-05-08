@@ -15,6 +15,9 @@ io.on("connection", (socket) => {
     socket.on("sendMessage", (response) => {
         socket.broadcast.emit("sendMessage", response)
     })
+    socket.on("status", (response) => {
+        socket.broadcast.emit("status", response)
+    })
 });
 
 server.listen(3000, () => {
